@@ -1,18 +1,26 @@
 import React from "react";
-import AddNote from "./components/AddNote";
+import { Router, Link } from "@reach/router";
+import Home from "./pages/Home";
+import Reader from "./pages/Reader";
 
-function App() {
+function App({ children }) {
   return (
-    <div className="App">
+    <div>
       <h1>Noter</h1>
-      <div id="menu">
+      <nav>
         <ul>
-          <li>Notes by Date</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="reader">Notes by Date</Link>
+          </li>
         </ul>
-      </div>
-      <div className="editor">
-        <AddNote />
-      </div>
+      </nav>
+      <Router>
+        <Home path="/" />
+        <Reader path="/reader" />
+      </Router>
     </div>
   );
 }
