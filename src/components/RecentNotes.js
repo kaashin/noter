@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { db } from "../config/firebase";
+import { db } from "../config/config";
 import ReactMarkdown from "react-markdown";
 
 function RecentNotes() {
